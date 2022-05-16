@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     box-sizing: border-box;
     background-color: #E62129;
@@ -13,34 +17,30 @@ header img {
     margin: 10px 20px;
 }
 
-header h1{
-    display: block;
-    color: white;
+header .h1{
+    width: 500px;
     font-size: 40px;
     padding-top: 20px;
 }
 
+.trans {
+    display: flex;
+    justify-content: center;
+}
+
 .toggle-menu {
-    border: 2px solid white;
+    float: right;
+    margin: 15px;
+}
+
+.toggle {
     width: 50px;
     height: 50px;
-    float: right;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px 30px;
     transition: 0.3s;
-}
-
-.toggle-menu span {
-    display: flex;
-    border: 1px solid white;
     border-radius: 10px;
-    background-color: white;
-    height: 4px;
-    margin: 4px 0;
 }
 
-.toggle-menu:hover {
+.toggle:hover {
     cursor: pointer;
     box-shadow: 0 0 20px white;
     opacity: 0.8;
@@ -54,10 +54,27 @@ header h1{
     background-color: rgba(230, 33, 41, 0.7);
     transition: 0.8s;
     z-index: 999;
+    font-family: 'Noto Serif', serif;
+}
+
+.menu-sidebar .dropdown-menu{
+    border: 2px solid #f2f2f2;
+}
+
+.menu-sidebar .dropdown-menu li{
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.menu-sidebar .dropdown-menu li a{
+    color: black;
+    font-size: 16px;
+    transition: 0.5s;
+    text-decoration: none;
 }
 
 .menu-sidebar li {
-    padding: 20px 30px;
+    padding: 20px 50px;
     transition: 0.8s;
 }
   
@@ -65,6 +82,7 @@ header h1{
     color: white;
     font-size: 20px;
     transition: 0.5s;
+    text-decoration: none;
 }
 
 .menu-sidebar li a:hover {
@@ -72,7 +90,7 @@ header h1{
 }
 
 #check {
-      display: none;
+    display: none;
 }
   
 #check:checked ~ .sidebar {
@@ -81,22 +99,89 @@ header h1{
 
 .menu-active {
     box-shadow: 0 0 20px white;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 h2 {
     display: inline-block;
-    width: 300px;
+    width: 360px;
     font-size: 28px;
-    margin: 50px 0 30px 0;
+    margin: 30px 0 30px 0;
     padding: 10px;
     border: 1px solid #E62129;
     border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.whatsapp {
+    position: fixed;
+    right: -120px;
+    bottom: 80px;
+    width: 180px;
+    height: 60px;
+    padding: 5px;
+    background-color: rgba(3, 194, 3,0.9);
+    border-radius: 25px 0 0 25px;
+    transition: 0.5s;
+    z-index: 999;
+}
+
+.whatsapp:hover {
+    right: 0;
+}
+
+.whatsapp a {
+    color: white;
+    display: flex;
+    text-align: left;
+}
+
+.whatsapp img {
+    width: 50px;
+    height: 50px;
+}
+
+.whatsapp .col:nth-child(1){
+    padding: 0 0 0 10px;
+}
+
+.whatsapp .col:nth-child(2) {
+    padding: 16px 10px 22px 10px;
+    font-size: 18px;
 }
 
 @media (max-width: 500px){
     .sidebar{
         left: -30%;
         width: 30%;
+    }
+
+    .menu-sidebar li {
+        padding: 20px;
+    }
+
+    header .h1 {
+        width: 260px;
+    }
+
+}
+
+@media (max-width: 800px){
+    .whatsapp .col:nth-child(2) {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    header .h1 {
+        width: 160px;
+    }
+
+    .whatsapp .col:nth-child(2) {
+        display: none;
+    }
+
+    .whatsapp:hover > .col{
+        display: block;
     }
 }
